@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * class - Entity from ICICLE table
  */
 package com.transfer.ordersweetnesswork.entity;
 import com.google.common.base.Preconditions;
@@ -10,15 +8,12 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-/**
- *
- * @author Lenovo
- */
+
 @Entity
 @DiscriminatorValue("ICICLE")
 public class Icicle extends Sweetness implements Serializable {
     //@Id @GeneratedValue
-    protected int idIcicle;
+    protected Integer idIcicle;
     
     public Icicle(){
         
@@ -29,9 +24,15 @@ public class Icicle extends Sweetness implements Serializable {
         this.idIcicle = builder.idIcicle;
     }
 
-    public boolean getIdIcicle() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Integer getIdIcicle() {
+        return idIcicle;
     }
+
+    public void setIdIcicle(int idIcicle) {
+        this.idIcicle = idIcicle;
+    }
+
+
 
     public static class Builder extends Icicle.InnerBuilder<Builder> {
 

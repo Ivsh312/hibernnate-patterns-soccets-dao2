@@ -1,10 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * several method for work with table ChocolateCandy and class Chocolate Candy
  */
 package com.transfer.ordersweetnesswork.Service;
-
 
 import com.transfer.ordersweetnesswork.DAO.IIcicleDAO;
 import com.transfer.ordersweetnesswork.entity.Icicle;
@@ -20,6 +17,7 @@ public class IcicleDAO implements IIcicleDAO {
 
     private SessionUtil sessionUtil = new SessionUtil();
 
+    //add new object Icicle in table Icicle
     @Override
     public boolean addIcicle(Icicle icicle) {
         Session session = null;
@@ -45,6 +43,7 @@ public class IcicleDAO implements IIcicleDAO {
         return flag;
     }
 
+    //get object Icicle from  table Icicle by id
     @Override
     public Icicle getById(Integer id) throws SQLException {
         Session session = null;
@@ -53,7 +52,7 @@ public class IcicleDAO implements IIcicleDAO {
         try {
             transaction = sessionUtil.openTransaction();
             session = sessionUtil.getSession();
-            
+
             String sqlQuery = "FROM Icicle WHERE IdIcicle = :id";
             Query query = session.createQuery(sqlQuery);
             query.setParameter("id", id);
@@ -71,6 +70,7 @@ public class IcicleDAO implements IIcicleDAO {
         return icicle;
     }
 
+    //get List of objects Icicle from  table Icicle by taste desired amount
     @Override
     public List<Icicle> getByTestyDesiredAmount(String taste, int numbers) throws SQLException {
         Session session = null;
@@ -79,7 +79,7 @@ public class IcicleDAO implements IIcicleDAO {
         try {
             transaction = sessionUtil.openTransaction();
             session = sessionUtil.getSession();
-            
+
             String sqlQuery = "FROM Icicle WHERE taste = :taste";
             Query query = session.createQuery(sqlQuery);
             query.setParameter("taste", taste);
@@ -97,6 +97,7 @@ public class IcicleDAO implements IIcicleDAO {
         return icicle;
     }
 
+    //delete object Icicle from table Icicle by id
     @Override
     public int deleteById(int id) throws SQLException {
         Session session = null;
@@ -105,13 +106,13 @@ public class IcicleDAO implements IIcicleDAO {
         try {
             transaction = sessionUtil.openTransaction();
             session = sessionUtil.getSession();
-            
-            String sqlDeleteString = "delete Icicle where IdIcicle = :id";        
+
+            String sqlDeleteString = "delete Icicle where IdIcicle = :id";
             Query query = session.createQuery(sqlDeleteString);
             query.setParameter("id", id);
             result = query.executeUpdate();
- 
-        }finally {
+
+        } finally {
             if (session != null) {
                 session.close();
             }

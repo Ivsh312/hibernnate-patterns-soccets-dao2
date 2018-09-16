@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * class - Entity from Sweetness table
  */
 package com.transfer.ordersweetnesswork.entity;
 
@@ -18,7 +16,7 @@ import javax.persistence.InheritanceType;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Sweetness implements Serializable {
     @Id @GeneratedValue
-    protected int idSweetnes;
+    protected Integer idSweetnes;
     protected String taste;
     protected double mass;
     protected double price;

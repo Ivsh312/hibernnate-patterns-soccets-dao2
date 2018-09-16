@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * client for work ith service
+ *open 2 thread 
+ *1 ReadThread missage
+  * 2 sent missage
  */
 package com.transfer.ordersweetnesswork.client;
 
@@ -20,7 +21,7 @@ public class Client {
     
     public Client() {
         try {
-            this.socket = new Socket("192.168.100.2", 8888);
+            this.socket = new Socket("192.168.1.2", 8888);
         } catch (UnknownHostException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {

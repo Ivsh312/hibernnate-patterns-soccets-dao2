@@ -1,8 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ * several method for work with table Toffee and class Toffee
+*/
 package com.transfer.ordersweetnesswork.Service;
 
 
@@ -23,7 +21,7 @@ import org.hibernate.Transaction;
 public class ToffeeDAO implements IToffeeDAO {
 
     private SessionUtil sessionUtil = new SessionUtil();
-
+    //add new object Toffee in table Toffee
     @Override
     public boolean addToffee(Toffee toffee) throws SQLException {
         Session session = null;
@@ -48,7 +46,7 @@ public class ToffeeDAO implements IToffeeDAO {
         }
         return flag;
     }
-
+    //get object Toffee from  table Toffee by id
     @Override
     public Toffee getById(Integer id) throws SQLException {
         Session session = null;
@@ -74,7 +72,7 @@ public class ToffeeDAO implements IToffeeDAO {
         }
         return toffee;
     }
-
+    //get List of objects Toffee from  table Toffee by taste desired amount
     @Override
     public List<Toffee> getByTestyDesiredAmount(String taste, int numbers) throws SQLException {
         Session session = null;
@@ -100,7 +98,8 @@ public class ToffeeDAO implements IToffeeDAO {
         }
         return toffee;
     }
-
+    
+    //delete object Toffee from table Toffee by id
     @Override
     public int deleteById(int id) throws SQLException {
         Session session = null;

@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * several method for work with table ChocolateCandy and class Chocolate Candy
  */
 package com.transfer.ordersweetnesswork.Service;
 
@@ -17,14 +15,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-/**
- *
- * @author Lenovo
- */
+
 public class ChocolateCandyDAO implements IChocolateCandyDAO {
 
     private SessionUtil sessionUtil = new SessionUtil();
-
+    //add new object ChocolateCandy in table ChocolateCandy
     @Override
     public boolean addChocolateCandy(ChocolateCandy chocolateCandy) throws SQLException {
         Session session = null;
@@ -49,7 +44,7 @@ public class ChocolateCandyDAO implements IChocolateCandyDAO {
         }
         return flag;
     }
-
+    //get object ChocolateCandy from  table ChocolateCandy by id
     @Override
     public ChocolateCandy getById(Integer id) throws SQLException {
         Session session = null;
@@ -75,7 +70,7 @@ public class ChocolateCandyDAO implements IChocolateCandyDAO {
         }
         return chocolateCandy;
     }
-
+    //get List of objects ChocolateCandy from  table ChocolateCandy by taste desired amount
     public List<ChocolateCandy> getByTestyDesiredAmount(String taste, int numbers) throws SQLException {
         Session session = null;
         Transaction transaction = null;
@@ -100,7 +95,7 @@ public class ChocolateCandyDAO implements IChocolateCandyDAO {
         }
         return chocolateCandy;
     }
-
+    //delete object ChocolateCandy from  table ChocolateCandy by id
     @Override
     public int deleteById(int id) throws SQLException {
         Session session = null;

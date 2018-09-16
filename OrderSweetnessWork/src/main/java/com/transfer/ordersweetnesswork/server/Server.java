@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 
@@ -27,7 +28,15 @@ public class Server {
 
     private void start() {
         try {
-            this.serverSocket = new ServerSocket(8888);
+            System.out.println("Enter the port number");
+            Scanner scan = new Scanner(System.in);
+            String port;
+            port = scan.nextLine();
+            try {
+                this.serverSocket = new ServerSocket(Integer.parseInt(port));
+            } catch (NumberFormatException e) {
+                this.serverSocket = new ServerSocket(8888);  // default port for server 
+            }
             Socket socket;
             while (true) {
                 socket = serverSocket.accept();

@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*testing work
  */
 package com.transfer.ordersweetnesswork.Main;
 
@@ -11,10 +9,6 @@ import com.transfer.ordersweetnesswork.entity.ChocolateCandy;
 import com.transfer.ordersweetnesswork.entity.Icicle;
 import java.sql.SQLException;
 
-/**
- *
- * @author Lenovo
- */
 public class Main1 {
 
     public static void main(String[] args) throws SQLException {

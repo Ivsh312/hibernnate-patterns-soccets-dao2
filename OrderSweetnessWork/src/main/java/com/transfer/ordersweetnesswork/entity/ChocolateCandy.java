@@ -1,25 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * class - Entity from ChocolateCandy table
  */
 package com.transfer.ordersweetnesswork.entity;
 
 import java.io.Serializable;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
-/**
- *
- * @author Lenovo
- */
 @Entity
 @DiscriminatorValue("CHOCK")
 public class ChocolateCandy extends Sweetness implements Serializable {
         //@Id @GeneratedValue
-    protected int idChocolateCandy;
+    protected Integer idChocolateCandy;
     public ChocolateCandy(){
         
     }
@@ -28,8 +20,12 @@ public class ChocolateCandy extends Sweetness implements Serializable {
         this.idChocolateCandy = builder.idChocolateCandy;
     }
 
-    public boolean getIdChocolateCandy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Integer getIdChocolateCandy() {
+        return idChocolateCandy;
+    }
+
+    public void setIdChocolateCandy(Integer idChocolateCandy) {
+        this.idChocolateCandy = idChocolateCandy;
     }
 
     public static class Builder extends Sweetness.InnerBuilder<Builder> {

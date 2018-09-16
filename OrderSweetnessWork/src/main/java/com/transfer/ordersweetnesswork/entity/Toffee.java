@@ -1,15 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * class - Entity from Toffee table
  */
 package com.transfer.ordersweetnesswork.entity;
 
 import com.google.common.base.Preconditions;
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 /**
  *
@@ -17,20 +13,25 @@ import javax.persistence.Id;
  */
 @Entity
 public class Toffee extends Sweetness implements Serializable {
+
     //@Id @GeneratedValue
-    protected int idToffee;
-    
-    public Toffee(){
-        
+    protected Integer idToffee;
+
+    public Toffee() {
+
     }
-    
+
     private Toffee(Builder builder) {
         super(builder);
         this.idToffee = builder.idToffee;
     }
 
-    public boolean getIdToffee() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setIdToffee(Integer idToffee) {
+        this.idToffee = idToffee;
+    }
+   
+    public Integer getIdToffee() {
+        return idToffee;
     }
 
     public static class Builder extends Toffee.InnerBuilder<Builder> {
@@ -51,20 +52,20 @@ public class Toffee extends Sweetness implements Serializable {
 
     @Override
     public String toString() {
-        return "Toffee{" 
-                + "idToffee=" 
-                + idToffee 
-                + ", idSweetnes=" 
-                + idSweetnes 
-                + ", taste=" 
-                + taste 
-                + ", mass=" 
-                + mass 
-                + ", price=" 
-                + price 
-                + ", nameProdyck=" 
-                + nameProdyck 
-                + ", nameTypeSweetness=" 
+        return "Toffee{"
+                + "idToffee="
+                + idToffee
+                + ", idSweetnes="
+                + idSweetnes
+                + ", taste="
+                + taste
+                + ", mass="
+                + mass
+                + ", price="
+                + price
+                + ", nameProdyck="
+                + nameProdyck
+                + ", nameTypeSweetness="
                 + nameTypeSweetness + '}';
     }
 }

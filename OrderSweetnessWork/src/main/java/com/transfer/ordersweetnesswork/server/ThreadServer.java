@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Thread for work with one client
+ * Receives messages from the client and responds to keywords
  */
 package com.transfer.ordersweetnesswork.server;
 
@@ -11,12 +10,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -31,6 +27,8 @@ class ThreadServer implements Runnable {
     int id;
     Present present;
     String userName;
+    private String startWorcsWithServer = "input \"order\" for workcs with service";
+    //code from sent file
     private String codeForStartTransfer = "8934951934553323435465768";
     ObjectOutputStream outFile;
 
@@ -55,7 +53,7 @@ class ThreadServer implements Runnable {
             server.addUser(userName);
             String msg;
             OrderProcessing processing;
-            this.sentMSG("input \"order\" for workcs service");
+            this.sentMSG(startWorcsWithServer);
             while (true) {
                 msg = inputMsg.readLine();
                 if (msg.equals("order")) {
@@ -68,11 +66,11 @@ class ThreadServer implements Runnable {
                         while (true) {
                             msg = inputMsg.readLine();
                             if (msg.equals("+")) {
-                                this.sentMSG("input \"order\" for workcs service");
+                                this.sentMSG(startWorcsWithServer);
                                 break;
                             } else {
                                 this.sentMSG("server " + present.toString());
-                                this.sentMSG("8934951934553323435465768");
+                                this.sentMSG(codeForStartTransfer);
                                 outFile = new ObjectOutputStream(this.socket.getOutputStream());
                                 outFile.writeObject(present);
                                 outFile.flush();
@@ -90,12 +88,12 @@ class ThreadServer implements Runnable {
             disconnect();
         }
     }
-
+    //sent message to client
     public void sentMSG(String msg) {
         outputMsg.println(msg);
         outputMsg.flush();
     }
-
+    //disconnect client
     public void disconnect() {
         try {
 

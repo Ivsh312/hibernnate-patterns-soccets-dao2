@@ -1,8 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+*class for getting session and transaction
+*/
 package com.transfer.ordersweetnesswork.hibernateUtil;
 
 import org.hibernate.Session;
