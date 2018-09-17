@@ -22,7 +22,7 @@ public final class Present extends ArrayList<Sweetness> implements Serializable{
     }
 
     public Present() {
-        
+        id = valueId++;
     }
 
     public int getId() {
