@@ -97,7 +97,7 @@ public class IcicleDAO implements IIcicleDAO {
         return icicle;
     }
 
-    //delete object Icicle from table Icicle by id
+    //delete Icicle from db by id
     @Override
     public int deleteById(int id) throws SQLException {
         Session session = null;

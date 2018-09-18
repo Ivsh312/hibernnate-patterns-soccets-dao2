@@ -23,6 +23,7 @@ public class HibernateUtil {
       return sessionFactory;
     }
     
+    //clouse session    
     public static void closeSessionFactory(){
         getSessionFactory().close();
     }

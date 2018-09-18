@@ -6,13 +6,11 @@ import com.google.common.base.Preconditions;
 import java.io.Serializable;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 @Entity
 @DiscriminatorValue("ICICLE")
 public class Icicle extends Sweetness implements Serializable {
-    //@Id @GeneratedValue
+
     protected Integer idIcicle;
     
     public Icicle(){

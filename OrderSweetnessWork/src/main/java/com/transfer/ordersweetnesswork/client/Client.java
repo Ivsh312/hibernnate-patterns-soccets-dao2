@@ -1,20 +1,15 @@
 /*
  * client for work ith service
- *open 2 thread 
- *1 ReadThread missage
-  * 2 sent missage
+ * open 2 thread 
+ * 1 ReadThread message
+ * 2 sent message
  */
 package com.transfer.ordersweetnesswork.client;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-/**
- *
- * @author Lenovo
- */
 public class Client {
     
     Socket socket;
@@ -33,7 +28,8 @@ public class Client {
         Client client = new Client();
         client.play();
     }
-
+    
+    //start threads for receiving and sending messages to the server
     public void play(){
         Thread thReadThread = new Thread(new ReadThread(socket, this));
         thReadThread.start();

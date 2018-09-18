@@ -10,7 +10,6 @@ import com.transfer.ordersweetnesswork.Service.IcicleDAO;
 import com.transfer.ordersweetnesswork.Service.ToffeeDAO;
 import com.transfer.ordersweetnesswork.entity.Sweetness;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -59,17 +58,16 @@ public class OrderProcessing {
         }
         return null;
     }
+    
         //depending on the parameters, returns the corresponding objects or null
     public List<? extends Sweetness> requestDb(String[] params) throws SQLException {
         threadServer.sentMSG("req");
-        //ISweetness sweetness;
         Integer numbers;
         numbers = Integer.parseInt(params[2]);
         ISweetness sweetness;
         switch (params[0]) {
             case "icicle":
                 sweetness = new IcicleDAO();
-//            return sweetness.getByTestyDesiredAmount("1", 8);
                 return sweetness.getByTestyDesiredAmount(params[1], numbers);
             case "toffee":
                 sweetness = new ToffeeDAO();

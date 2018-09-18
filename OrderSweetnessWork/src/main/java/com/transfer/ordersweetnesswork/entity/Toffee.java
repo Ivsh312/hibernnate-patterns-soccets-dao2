@@ -7,10 +7,6 @@ import com.google.common.base.Preconditions;
 import java.io.Serializable;
 import javax.persistence.Entity;
 
-/**
- *
- * @author Lenovo
- */
 @Entity
 public class Toffee extends Sweetness implements Serializable {
 

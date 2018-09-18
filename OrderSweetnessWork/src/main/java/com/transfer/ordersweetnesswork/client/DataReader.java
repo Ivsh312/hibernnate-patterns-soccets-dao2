@@ -8,10 +8,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
-/**
- *
- * @author Lenovo
- */
 public class DataReader implements Runnable {
 
     private Present present;
@@ -26,7 +22,8 @@ public class DataReader implements Runnable {
         this.fileName = fileName;
         this.size = size;
     }
-
+    
+    //get file from server
     @Override
     public void run() {
         try {

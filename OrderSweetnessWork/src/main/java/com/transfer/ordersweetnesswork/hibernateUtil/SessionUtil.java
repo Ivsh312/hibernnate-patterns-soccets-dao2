@@ -6,10 +6,6 @@ package com.transfer.ordersweetnesswork.hibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-/**
- *
- * @author Lenovo
- */
 public class SessionUtil {
         Session  session = null;
     Transaction transaction = null;

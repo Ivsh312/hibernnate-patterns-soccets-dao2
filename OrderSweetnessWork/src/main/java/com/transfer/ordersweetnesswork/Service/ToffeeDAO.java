@@ -14,13 +14,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-/**
- *
- * @author Lenovo
- */
+
 public class ToffeeDAO implements IToffeeDAO {
 
     private SessionUtil sessionUtil = new SessionUtil();
+    
     //add new object Toffee in table Toffee
     @Override
     public boolean addToffee(Toffee toffee) throws SQLException {
@@ -46,6 +44,7 @@ public class ToffeeDAO implements IToffeeDAO {
         }
         return flag;
     }
+    
     //get object Toffee from  table Toffee by id
     @Override
     public Toffee getById(Integer id) throws SQLException {
@@ -72,6 +71,7 @@ public class ToffeeDAO implements IToffeeDAO {
         }
         return toffee;
     }
+    
     //get List of objects Toffee from  table Toffee by taste desired amount
     @Override
     public List<Toffee> getByTestyDesiredAmount(String taste, int numbers) throws SQLException {

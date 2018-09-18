@@ -1,8 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ *the server allocating for each client a separate flow
+*/
 package com.transfer.ordersweetnesswork.server;
 
 import java.io.IOException;
@@ -12,9 +10,8 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-
 public class Server {
-      
+
     private ServerSocket serverSocket;
     private Set<ThreadServer> SetClients = new HashSet<>();
     private Set<String> SetNames = new HashSet<>();
@@ -26,6 +23,10 @@ public class Server {
 
     }
 
+    /*
+    waiting for client connections then add the 
+    clients to the set and start processing in the new thread
+     */
     private void start() {
         try {
             System.out.println("Enter the port number");
@@ -50,9 +51,13 @@ public class Server {
             ex.printStackTrace();
         }
     }
-    public void addUser(String name){
+    
+    //add new client
+    public void addUser(String name) {
         this.SetNames.add(name);
     }
+    
+    //remove client
     public void removeUser(String userName, ThreadServer client) {
         boolean removed = this.SetNames.remove(userName);
         if (removed) {

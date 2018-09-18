@@ -8,10 +8,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
-/**
- *
- * @author Lenovo
- */
 public class WriteThread implements Runnable {
 
     private Socket socket;
@@ -49,7 +45,8 @@ public class WriteThread implements Runnable {
             }
         }
     }
-
+    
+    //sent mesage to the server
     public void sentMSG(String msg) {
         outputMsg.println(msg);
         outputMsg.flush();

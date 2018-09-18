@@ -14,10 +14,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.List;
 
-/**
- *
- * @author Lenovo
- */
 class ThreadServer implements Runnable {
 
     Server server;
@@ -45,6 +41,11 @@ class ThreadServer implements Runnable {
         }
     }
 
+    //the first level of work with the client
+    /*
+    exchanges messages with the client, waits for the receipt of the keyword 
+    and, if it is received, initializes the processing of requests to the database
+     */
     @Override
     public void run() {
         this.sentMSG("Server listens");
@@ -88,11 +89,13 @@ class ThreadServer implements Runnable {
             disconnect();
         }
     }
+
     //sent message to client
     public void sentMSG(String msg) {
         outputMsg.println(msg);
         outputMsg.flush();
     }
+
     //disconnect client
     public void disconnect() {
         try {
